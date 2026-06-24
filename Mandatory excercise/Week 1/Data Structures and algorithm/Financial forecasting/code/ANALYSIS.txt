@@ -1,0 +1,39 @@
+ANALYSIS
+Time Complexity
+The recursive algorithm makes one recursive call for each year until the base case (years == 0) is reached.
+• For n years, there are n recursive calls.
+• Each recursive call performs a constant amount of work, such as one multiplication and one recursive function call.
+Recurrence Relation:
+T(n) = T(n - 1) + 1
+Time Complexity: O(n)
+This means the execution time grows linearly with the number of years being forecasted. If the number of years doubles, the number of recursive calls also doubles.
+Space Complexity
+The recursion stack stores each function call until the base case is reached.
+• For n years, n recursive calls are stored in memory.
+• Each recursive call occupies stack space.
+Space Complexity: O(n)
+This means memory usage increases linearly with the number of years being forecasted.
+Optimization
+The recursive solution can be optimized to improve performance and reduce memory consumption, especially for large forecasting periods.
+1. Memoization
+• Store previously computed results in a data structure such as an array or HashMap.
+• When the same result is required again, retrieve it instead of recalculating it.
+• Reduces redundant computations and improves efficiency.
+2. Iterative Approach
+• Replace recursion with a loop.
+• Eliminates recursive function call overhead.
+• Reduces space complexity from O(n) to O(1).
+• More suitable for large forecasting periods.
+3. Mathematical Formula
+• Future values can be calculated directly using the compound growth formula:
+Future Value = Present Value × (1 + Growth Rate)^Years
+• Java provides the Math.pow() method to efficiently compute powers.
+• Avoids recursive calls and simplifies the implementation.
+Benefits of Optimization
+• Reduces execution time for large forecasting periods.
+• Minimizes memory usage.
+• Prevents stack overflow errors caused by deep recursion.
+• Improves the overall efficiency and scalability of the financial forecasting system.
+Conclusion
+The recursive forecasting algorithm is simple and easy to understand, with a time complexity of O(n) and a space complexity of O(n). However, for large forecasting periods, iterative methods or direct mathematical calculations provide better performance and memory efficiency.
+
